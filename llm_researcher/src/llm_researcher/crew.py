@@ -28,7 +28,7 @@ class LlmResearcher():
         return Agent(
             config=self.agents_config['researcher'], # type: ignore[index]
             verbose=True,
-            tools=[RawDataAccessTool()]
+            tools=[RawDataAccessTool(), OptimizedCSVAnalysisTool()]
         )
 
     @agent

@@ -52,7 +52,16 @@ class RawDataAccessTool(BaseTool):
             return "Erro: Não foi possível carregar o dataset de produtividade."
 
         try:
-            return self._get_full_data(df)
+            if data_format == "columns":
+                return self._get_column_info(df)
+            elif data_format == "sample":
+                return self._get_sample_data(df)
+            elif data_format == "full":
+                return self._get_full_data(df)
+            elif data_format == "summary":
+                return self._get_basic_summary(df)
+            else:
+                return self._get_sample_data(df)
         except Exception as e:
             return f"Erro ao acessar dados: {str(e)}"
 
@@ -101,7 +110,9 @@ class RawDataAccessTool(BaseTool):
 
     def _get_full_data(self, df: pd.DataFrame) -> str:
         """Get all data - use carefully as this can be very large."""
-          
+        if len(df) > 500:
+            return f"ATENÇÃO: Dataset tem {len(df)} registros. Isso pode ser muito grande para processar de uma vez. Use 'sample' para ver uma amostra ou 'summary' para estatísticas básicas."
+        
         result = f"DATASET COMPLETO ({len(df)} registros):\n\n"
         result += "COLUNAS: " + " | ".join(df.columns.tolist()) + "\n\n"
         
