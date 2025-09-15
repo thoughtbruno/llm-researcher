@@ -1,0 +1,49 @@
+research_task:
+  description: >
+    Perform exploratory data analysis of the {topic} dataset by examining the raw data directly.
+    Use the Raw Data Access tool to:
+    1. First examine the dataset structure to understand what data is available
+    2. Analyze the data you see to identify patterns, outliers, and relationships
+    3. Form your own hypotheses and conclusions based on what you observe
+    
+    You can also use the Optimized CSV Data Analysis tool for specific statistical analyses 
+    if you want to verify your observations or get additional insights.
+    
+    Focus on discovering insights that aren't obvious - look for hidden patterns, 
+    unexpected relationships, and interesting anomalies in the data.
+  expected_output: >
+    A comprehensive research report with your discoveries from examining the raw data:
+    at least 10 key findings with the following structure:
+
+      - Title: Clear, specific finding
+      - Data Evidence: Exact numbers, percentages, statistical measures
+      - Business Insight: What this means for operations
+      - Supporting Details: Additional quantitative context
+      Format each finding with concrete data points and avoid generic descriptions.
+    
+    Base everything on your direct examination of the data, not pre-built analysis.
+  agent: researcher
+
+reporting_task:
+  description: >
+    Transform the quantitative research findings into a comprehensive executive report.
+    For each finding from the researcher, create a detailed section that includes:
+    - Executive Summary with key metrics highlighted
+    - Detailed Analysis with all statistical evidence
+    - Visual Data Descriptions (describe charts/graphs that would illustrate the data)
+    - Business Implications and recommendations
+    - Performance Benchmarks where applicable
+    Ensure every section is supported by the specific numbers and percentages provided by the researcher.
+  expected_output: >
+    A comprehensive HTML report structured as:
+    1. Executive Summary with key performance indicators
+    2. Detailed sections for each finding with:
+       - Statistical evidence and metrics
+       - Data visualization descriptions
+       - Business impact analysis
+       - Actionable recommendations
+    Insert at least 1 table with the data from the analysis.
+    Include all numerical data, percentages, and statistical measures.
+    Format as beautiful HTML to present to director, CEO, etc (but without code blocks or markdown formatting).
+    The report should be in PT-BR language.
+  agent: reporting_analyst
