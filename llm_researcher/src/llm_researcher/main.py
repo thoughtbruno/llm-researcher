@@ -18,7 +18,7 @@ def run():
     Run the crew.
     """
     inputs = {
-        'topic': 'Media de produtividade '
+        'topic': 'Picos de produtividade por dia da semana'
     }
     
     try:

@@ -1,551 +1,115 @@
-<html lang="pt-BR">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Relatório Executivo de Produtividade Operacional</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; color: #333; }
-    h1, h2, h3 { color: #00529B; }
-    table { border-collapse: collapse; width: 80%; margin: 15px 0; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
-    th { background-color: #e6f0fa; }
-    .highlight { color: #007700; font-weight: bold; }
-    .section { margin-bottom: 40px; }
-  </style>
+    <title>Relatório Executivo de Produtividade</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1 { color: #333; }
+        h2 { color: #555; }
+        p { line-height: 1.5; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
 </head>
 <body>
 
-<h1>Relatório Executivo de Produtividade Operacional</h1>
+<h1>Relatório Executivo de Produtividade</h1>
 
-<section class="section">
-  <h2>1. Resumo Executivo</h2>
-  <p>Este relatório apresenta os principais indicadores e análises sobre a produtividade operacional obtidos a partir da análise de 1197 registros de turnos e equipes. Os destaques incluem:</p>
-  <ul>
-    <li><span class="highlight">72,6%</span> dos turnos superam as metas de produtividade estabelecidas.</li>
-    <li>Produtividade média real de 73,5% com variabilidade moderada (desvio padrão de 17,4%).</li>
-    <li>Correlação positiva moderada (r=0,422) entre produtividade alvo e produtividade real.</li>
-    <li>Impactos negativos frequentes de mudanças de estilo (-0,207 correlação) e sinergias entre departamentos evidenciadas.</li>
-    <li>Diferenças claras entre departamentos de acabamento (produtividade média 78,2%) e costura (72,2%).</li>
-    <li>Horário extra apresenta alta variabilidade sem impacto direto relevante na produtividade.</li>
-    <li>Tendências sazonais e semanais indicam maiores eficiências aos sábados e no 5º trimestre analisado.</li>
-    <li>Incentivos são aplicados de forma inconsistente e não demonstram correlação estatística com produtividade.</li>
-  </ul>
-</section>
+<h2>1. Resumo Executivo</h2>
+<p>A produtividade média das equipes está em 0.735 (73.5%), ligeiramente acima da meta de 0.730 (73.0%). As análises subsequentes destacam disparidades entre departamentos, impactos de horas extras e tendências sazonais que podem impactar a eficiência.</p>
+<p><strong>Métricas-chave:</strong></p>
+<ul>
+    <li>Produtividade Média: 73.5%</li>
+    <li>Diferença de Performance: +0.5%</li>
+    <li>Horas Extras no Departamento de Acabamento: 1792.5</li>
+    <li>Segunda Maior Produtividade: 78.2% (Acabamento - Segundo)</li>
+    <li>Queda da Produtividade na Terceira Trimestre: -4.7%</li>
+</ul>
 
-<section class="section">
-  <h2>2. Majority of Shifts Exceed Productivity Targets</h2>
-  <h3>Resumo Executivo</h3>
-  <p>Dos <strong>1197</strong> registros analisados, <strong>72,6%</strong> (869) apresentaram produtividade real acima do alvo, enquanto apenas <strong>26,9%</strong> ficaram abaixo da meta. A mediana da produtividade real é <strong>77,3%</strong>, superando a mediana do objetivo de <strong>75%</strong>.</p>
+<h2>2. Análise Detalhada de Resultados</h2>
 
-  <h3>Análise Detalhada</h3>
-  <p>A grande maioria dos turnos mantém-se acima do desempenho esperado, demonstrando eficácia na gestão operacional e um ambiente produtivo.</p>
-  
-  <table>
-    <thead>
-      <tr>
-        <th>Métrica</th>
-        <th>Valor</th>
-        <th>Comentário</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Total de Registros</td>
-        <td>1197</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td>Número Acima da Meta</td>
-        <td>869</td>
-        <td>72,6%</td>
-      </tr>
-      <tr>
-        <td>Número Abaixo da Meta</td>
-        <td>322</td>
-        <td>26,9%</td>
-      </tr>
-      <tr>
-        <td>Mediana Produtividade Real</td>
-        <td>77,3%</td>
-        <td>Acima da meta 75%</td>
-      </tr>
-      <tr>
-        <td>Mediana Produtividade Alvo</td>
-        <td>75%</td>
-        <td>-</td>
-      </tr>
-    </tbody>
-  </table>
+<h3>Finding 1: Nível Geral de Produtividade</h3>
+<p>A produtividade média da força de trabalho foi de 0.735 (73.5%), que está acima da meta de 0.730 (73.0%). O crescimento de +0.5% demonstra um bom desempenho, com oportunidades identificadas para melhorias futuras.</p>
 
-  <h3>Descrição Visual</h3>
-  <p>Um gráfico de barras pode ilustrar a proporção de registros acima e abaixo da meta, destacando o percentual de <strong>72,6%</strong> acima do alvo. Um boxplot comparando a distribuição da produtividade real e meta evidenciaria a posição superior da mediana real.</p>
-
-  <h3>Implicações de Negócio</h3>
-  <p>A predominância dos resultados acima da meta sugere que os processos operacionais estão bem estruturados, com equipes motivadas e objetivos claros. Isso permite estabilidade e confiança no cumprimento das metas de produção. A priorização deve ser manter essas condições, monitorando eventuais causadores de queda.</p>
-
-  <h3>Recomendações</h3>
-  <ul>
-    <li>Investir em treinamentos para aprimorar ainda mais as equipes que estão perto de alcançar, mas abaixo da meta (<span>26,9%</span> dos casos).</li>
-    <li>Estabelecer controles para identificar causas de oscilação em turnos abaixo da meta para intervenções rápidas.</li>
-    <li>Monitorar continuamente o alinhamento entre metas e resultados para garantir manutenção do desempenho geral.</li>
-  </ul>
-</section>
-
-<section class="section">
-  <h2>3. Variabilidade Moderada da Produtividade</h2>
-  <h3>Resumo Executivo</h3>
-  <p>A produtividade real varia entre <strong>23,4%</strong> e <strong>112%</strong>, com média de <strong>73,5%</strong> e desvio padrão de <strong>17,4%</strong>. Aproximadamente <strong>20,8%</strong> dos registros apresentam produtividade baixa (abaixo de 90% da meta), indicando pontos críticos para melhorias.</p>
-
-  <h3>Análise Detalhada</h3>
-  <p>A amplitude da produtividade indica que, apesar de geral estar em níveis adequados, existe uma heterogeneidade significativa na performance, impactando a eficiência global. O desvio padrão de 17,4% reforça esta variabilidade.</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Métrica</th>
-        <th>Valor</th>
-        <th>Comentário</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Produtividade Mínima</td>
-        <td>23,4%</td>
-        <td>Valor extremo inferior</td>
-      </tr>
-      <tr>
-        <td>Produtividade Máxima</td>
-        <td>112%</td>
-        <td>Valor extremo superior, superando meta</td>
-      </tr>
-      <tr>
-        <td>Média</td>
-        <td>73,5%</td>
-        <td>Produtividade geral média</td>
-      </tr>
-      <tr>
-        <td>Desvio Padrão</td>
-        <td>17,4%</td>
-        <td>Variabilidade considerável</td>
-      </tr>
-      <tr>
-        <td>% Registros com Prod. < 90% alvo</td>
-        <td>20,8%</td>
-        <td>Grupo crítico</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3>Descrição Visual</h3>
-  <p>Um histograma de frequência mostrando a distribuição da produtividade real revelaria a concentração principal em torno dos 70-80%, com cauda para produtividade baixa. Um gráfico de dispersão pode evidenciar os registros abaixo de 90% em destaque.</p>
-
-  <h3>Implicações de Negócio</h3>
-  <p>A variabilidade indica que processos e equipes não estão uniformemente otimizados, gerando desperdícios e possíveis gargalos. Focar na redução desta variabilidade traria ganhos de eficiência e previsibilidade.</p>
-
-  <h3>Recomendações</h3>
-  <ul>
-    <li>Diagnosticar causas da baixa produtividade em ~21% dos registros (<90% da meta).</li>
-    <li>Padronizar procedimentos para controlar variabilidade operacional.</li>
-    <li>Implementar métricas de controle estatístico para monitorar desvios de desempenho em tempo real.</li>
-  </ul>
-</section>
-
-<section class="section">
-  <h2>4. Correlação Positiva Entre Produtividade Alvo e Real</h2>
-  <h3>Resumo Executivo</h3>
-  <p>Foi observada uma correlação moderada positiva de <strong>0,422</strong> entre a produtividade alvo e a produtividade real. Correlações negativas leves foram notadas entre a produtividade real e tanto o SMV (-0,122) quanto as mudanças de estilo (-0,207).</p>
-  
-  <h3>Análise Detalhada</h3>
-  <p>A correlação de 0,422 (p < 0,05) indica que metas mais altas tendem a estar associadas a produtividades alcançadas maiores, refletindo a possível influência motivacional e planejamento alinhado.</p>
-  <p>Correlação negativa com SMV e mudanças de estilo, embora fraca, sinaliza que quanto maior o esforço padrão ou maior a frequência de mudanças de estilo, menor é a produtividade alcançada.</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Variável</th>
-        <th>Correlação com Produtividade Real</th>
-        <th>Significado</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Produtividade Alvo</td>
-        <td>0,422</td>
-        <td>Moderada positiva</td>
-      </tr>
-      <tr>
-        <td>SMV (Standard Minute Value)</td>
-        <td>-0,122</td>
-        <td>Fraca negativa</td>
-      </tr>
-      <tr>
-        <td>Quantidade de Mudanças de Estilo</td>
-        <td>-0,207</td>
-        <td>Negativa significativa</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3>Descrição Visual</h3>
-  <p>Um gráfico de dispersão com linha de tendência linear mostraria claramente a relação positiva entre produtividade alvo e alcançada. Gráficos de dispersão separados para SMV e mudanças de estilo contra produtividade real mostrariam as correlações negativas, com nuvens de pontos inclinadas negativamente.</p>
-
-  <h3>Implicações de Negócio</h3>
-  <p>Os dados indicam que metas adequadamente estipuladas possuem efeito positivo real sobre resultados. Entretanto, fatores externos como mudanças de estilo impactam negativamente na produtividade e precisam ser minimizados para manter níveis ótimos.</p>
-
-  <h3>Recomendações</h3>
-  <ul>
-    <li>Ajustar metas alinhadas à capacidade e recursos para estimular produtividade.</li>
-    <li>Controlar e planejar mudanças de estilo para evitar impactos negativos.</li>
-    <li>Monitorar SMV e otimizar tempos padrão para reduzir impactos negativos.</li>
-  </ul>
-</section>
-
-<section class="section">
-  <h2>5. Impacto Negativo das Mudanças de Estilo na Produtividade</h2>
-  <h3>Resumo Executivo</h3>
-  <p>As mudanças de estilo mostram correlação negativa de <strong>-0,207</strong> com a produtividade real, indicando impacto prejudicial. Aproximadamente <strong>15%</strong> dos dados analisados apresentam mudanças de estilo.</p>
-
-  <h3>Análise Detalhada</h3>
-  <p>O efeito disruptivo das mudanças frequentes gera atrasos, retrabalhos e dificulta o ritmo de produção, refletindo-se na queda da produtividade. A magnitude da correlação indica influência consistente.</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Métrica</th>
-        <th>Valor</th>
-        <th>Observação</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Correlação Produtividade x Mudanças de Estilo</td>
-        <td>-0,207</td>
-        <td>Negativa, estatisticamente significativa</td>
-      </tr>
-      <tr>
-        <td>% Registros com Mudanças de Estilo</td>
-        <td>15%</td>
-        <td>Subgrupo relevante</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3>Descrição Visual</h3>
-  <p>Um gráfico de barras comparando média de produtividade em registros com e sem mudanças de estilo destacaria a queda média da produtividade associada a mudanças.</p>
-
-  <h3>Implicações de Negócio</h3>
-  <p>Frequentemente, alterações nos estilos provocam irregularidade operacional, perda de foco e diminuição da produtividade. A gestão da produção deve contemplar maior estabilidade para mitigar este impacto.</p>
-
-  <h3>Recomendações</h3>
-  <ul>
-    <li>Estabelecer processos rigorosos para aprovação e implementação de mudanças de estilo.</li>
-    <li>Planejar antecipadamente para minimizar o número de alterações durante os turnos produtivos.</li>
-    <li>Monitorar indicadores específicos para controlar impactos e obter retroalimentação.</li>
-  </ul>
-</section>
-
-<section class="section">
-  <h2>6. Campo WIP Predominantemente Ausente no Departamento de Acabamento</h2>
-  <h3>Resumo Executivo</h3>
-  <p>Os dados mostram ausência significativa dos valores WIP (Work In Progress) principalmente em registros do departamento de acabamento, dividido em dois grupos (249 e 257 registros) com inconsistências de nomenclatura ('finishing' e 'finishing ').</p>
-
-  <h3>Análise Detalhada</h3>
-  <p>A inconsistência nos dados indica problemas na qualidade da informação, dificultando o acompanhamento da produção em andamento.</p>
-
-  <table>
-    <thead>
-      <tr>
+<h3>Finding 2: Análise dos Departamentos</h3>
+<p>Produtividade por departamento:</p>
+<table>
+    <tr>
         <th>Departamento</th>
-        <th>Registros com WIP Ausente</th>
-        <th>Observações</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Acabamento (finishing)</td>
-        <td>249</td>
-        <td>Sem valor WIP informado</td>
-      </tr>
-      <tr>
-        <td>Acabamento (finishing )</td>
-        <td>257</td>
-        <td>Erro na nomenclatura e falta de WIP</td>
-      </tr>
-    </tbody>
-  </table>
+        <th>Produtividade</th>
+    </tr>
+    <tr>
+        <td>Sewing</td>
+        <td>72.2%</td>
+    </tr>
+    <tr>
+        <td>Finishing (Primeiro)</td>
+        <td>72.3%</td>
+    </tr>
+    <tr>
+        <td>Finishing (Segundo)</td>
+        <td>78.2%</td>
+    </tr>
+</table>
+<p>O departamento de finalização mostrou desempenho 5.2% superior à média, sugerindo melhores práticas a serem aplicadas em outros setores.</p>
 
-  <h3>Descrição Visual</h3>
-  <p>Um gráfico de barras evidenciando os departamentos com ausência de WIP mostraria claramente o acabamento como área crítica, além de uma tag cloud ou tabela para demonstrar a duplicidade na nomenclatura.</p>
+<h3>Finding 3: Impacto das Horas Extras</h3>
+<p>O depósito de horas extras mostra que o departamento de finalização trabalha, em média, 1792.5 horas. Embora essa carga horária mantenha a produtividade em 72.3%, a tendência mostra que horas em excesso podem não ser eficazes, como visto no departamento de costura.</p>
 
-  <h3>Implicações de Negócio</h3>
-  <p>A ausência de dados confiáveis no acabamento prejudica o planejamento, monitoramento e análise de gargalos, limitando a capacidade de melhorar o desempenho desse setor.</p>
+<h3>Finding 4: Tendências de Tempo em Produtividade</h3>
+<p>A análise dos trimestres revela a seguinte tendência:</p>
+<table>
+    <tr>
+        <th>Trimestre</th>
+        <th>Produtividade</th>
+    </tr>
+    <tr>
+        <td>Q1</td>
+        <td>75.2%</td>
+    </tr>
+    <tr>
+        <td>Q2</td>
+        <td>74.4%</td>
+    </tr>
+    <tr>
+        <td>Q3</td>
+        <td>70.5%</td>
+    </tr>
+    <tr>
+        <td>Q4</td>
+        <td>70.9%</td>
+    </tr>
+</table>
+<p>Observamos uma queda de 4.7% do Q1 para o Q3, sugerindo a necessidade de melhor gerenciamento de carga de trabalho.</p>
 
-  <h3>Recomendações</h3>
-  <ul>
-    <li>Realizar limpeza e padronização dos dados do sistema, eliminando duplicidades.</li>
-    <li>Implementar treinamento para reforçar a importância do registro preciso do WIP.</li>
-    <li>Investir em sistemas de coleta de dados automatizados para reduzir falhas.</li>
-  </ul>
-</section>
+<h3>Finding 5: Padrões de Produtividade Diários</h3>
+<p>Os sábados apresentam a maior produtividade com 75.2%, indicando uma oportunidade estratégica para ajustes de escalas de trabalho e maximização da eficiência.</p>
 
-<section class="section">
-  <h2>7. Produtividade por Departamento: Acabamento versus Costura</h2>
-  <h3>Resumo Executivo</h3>
-  <p>O departamento de acabamento apresenta média de produtividade de <strong>78,2%</strong>, superior à média da costura, que é <strong>72,2%</strong>. Acabamento também possui menor carga total de horas extras em relação ao tamanho do time.</p>
+<h3>Finding 6: Análise do Tempo Ocioso</h3>
+<p>Observou-se um tempo ocioso médio de 0.0 minutos no departamento de finalização, um sinal de eficiência, mas uma revisão de outros departamentos revelou tempos ociosos significativos que podem ser reduzidos.</p>
 
-  <h3>Análise Detalhada</h3>
-  <p>A maior produtividade do acabamento pode estar relacionada à natureza dos processos, especialização e menores demandas de horas extras. Costura, apesar do maior tamanho da equipe e maior trabalho extra (6508,2h), demonstra desempenho médio inferior.</p>
+<h3>Finding 7: Influência do número de trabalhadores</h3>
+<p>O departamento de acabamentos com 2.599 trabalhadores registrou uma produtividade de 78.2%, mostrando que um número maior de trabalhadores pode correlacionar-se positivamente com os resultados de produtividade.</p>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Departamento</th>
-        <th>Produtividade Média (%)</th>
-        <th>Horas Extras Média (h)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Acabamento</td>
-        <td>78,2%</td>
-        <td>~2037,9</td>
-      </tr>
-      <tr>
-        <td>Costura</td>
-        <td>72,2%</td>
-        <td>6508,2 (total da equipe grande)</td>
-      </tr>
-    </tbody>
-  </table>
+<h3>Finding 8: Padrões Sazonais na Produção</h3>
+<p>As flutuações sazonais demonstram picos de produtividade no Q1. A preparação da força de trabalho deve ser adaptada antes de entrar nos períodos de menor produtividade.</p>
 
-  <h3>Descrição Visual</h3>
-  <p>Gráfico comparativo de barras mostrando a produtividade média por departamento e as horas extras correspondentes destacaria a diferença de eficiência entre os setores.</p>
+<h3>Finding 9: Análise de Desempenho da Equipe</h3>
+<p>As variações de desempenho das equipes mostram a necessidade de replicar práticas de alta performance observadas em equipes bem-sucedidas.</p>
 
-  <h3>Implicações de Negócio</h3>
-  <p>Os resultados indicam a necessidade de fortalecimento das práticas e recursos no departamento de costura para elevar a performance e otimizar o uso do horário extra.</p>
+<h3>Finding 10: Dinâmica de Gênero nos Dados</h3>
+<p>Uma revisão da distribuição de gênero pode oferecer insights valiosos para ajustes que aumentem a produtividade e engajamento da equipe.</p>
 
-  <h3>Recomendações</h3>
-  <ul>
-    <li>Analisar causas da menor produtividade na costura e criar planos de melhoria focados.</li>
-    <li>Avaliar a efetividade do uso de horas extras e seu impacto sobre a produtividade.</li>
-    <li>Compartilhar melhores práticas entre departamentos para potencializar resultados.</li>
-  </ul>
-</section>
+<h2>3. Implicações Comerciais e Recomendações</h2>
+<p>Com base nas análises apresentadas, as seguintes ações são recomendadas:</p>
+<ul>
+    <li>Implementar práticas de sucesso do departamento de acabamentos para melhorar a produtividade em departamentos com desempenho inferior.</li>
+    <li>Ajustar a carga de trabalho e equipes em períodos críticos, a fim de aliviar os picos no Q3 e aprimorar a gestão de horas extras.</li>
+    <li>Maximizar a produtividade nas quintas-feiras, redistribuindo pessoal para aliviar as flutuações de carga diária.</li>
+</ul>
 
-<section class="section">
-  <h2>8. Variação e Impacto das Horas Extras</h2>
-  <h3>Resumo Executivo</h3>
-  <p>Horas extras apresentam alta variabilidade, com valores entre 0 e 25.920 horas, média de <strong>4.567,46</strong> horas e desvio padrão de <strong>3.348,82</strong>. Não foi identificada correlação relevante entre horas extras e produtividade.</p>
-
-  <h3>Análise Detalhada</h3>
-  <p>Embora o uso de horas extras seja amplo, isto não se traduz em melhoria de produtividade, indicando que ganhos devem vir de melhorias de processo e não apenas do aumento da carga horária.</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Métrica</th>
-        <th>Valor</th>
-        <th>Comentário</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Horas Extras Mínimas</td>
-        <td>0</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td>Horas Extras Máximas</td>
-        <td>25.920</td>
-        <td>Alto pico</td>
-      </tr>
-      <tr>
-        <td>Média de Horas Extras</td>
-        <td>4.567,46</td>
-        <td>Alta variação</td>
-      </tr>
-      <tr>
-        <td>Desvio Padrão</td>
-        <td>3.348,82</td>
-        <td>Grande dispersão</td>
-      </tr>
-      <tr>
-        <td>Correlação com Produtividade</td>
-        <td>Próxima de zero</td>
-        <td>Sem influência relevante</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3>Descrição Visual</h3>
-  <p>Um boxplot das horas extras evidenciaria a alta dispersão. Gráfico de dispersão entre horas extras e produtividade confirmaria a ausência de correlação significativa.</p>
-
-  <h3>Implicações de Negócio</h3>
-  <p>O investimento em horas extras deve ser revisto, pois a simples extensão do período produtivo não gera necessariamente aumento de produtividade. Priorizar melhorias em processos e capacitação deve ser foco.</p>
-
-  <h3>Recomendações</h3>
-  <ul>
-    <li>Restringir uso excessivo de horas extras enquanto não houver ganho comprovado em produtividade.</li>
-    <li>Investir em eficiência técnica para melhorar produtividade dentro da jornada padrão.</li>
-    <li>Monitorar o impacto das horas extras para evitar overwork e custos desnecessários.</li>
-  </ul>
-</section>
-
-<section class="section">
-  <h2>9. Tendências Semanais e Trimestrais da Produtividade</h2>
-  <h3>Resumo Executivo</h3>
-  <p>Produtividade máxima observada aos sábados com <strong>75,2%</strong> e mínima às quintas-feiras <strong>72,3%</strong>. O 5º trimestre analisado apresenta a maior média (82,6%), enquanto o 3º trimestre a menor (70,5%), uma variação de aproximadamente <strong>3,7 pontos percentuais</strong>.</p>
-
-  <h3>Análise Detalhada</h3>
-  <p>As oscilações semanais e trimestrais indicam efeitos sazonais e de carga de trabalho, que podem ser usados para otimizar o planejamento.</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Período</th>
-        <th>Produtividade Média (%)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Sábado</td>
-        <td>75,2%</td>
-      </tr>
-      <tr>
-        <td>Quinta-feira</td>
-        <td>72,3%</td>
-      </tr>
-      <tr>
-        <td>5º Trimestre</td>
-        <td>82,6%</td>
-      </tr>
-      <tr>
-        <td>3º Trimestre</td>
-        <td>70,5%</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3>Descrição Visual</h3>
-  <p>Gráficos de linha representando a produtividade média por dia da semana e por trimestre ilustrariam as tendências e permitiriam visualizar os picos e vales.</p>
-
-  <h3>Implicações de Negócio</h3>
-  <p>A compreensão das variações permite redirecionar recursos, ajustar cargas e priorizar esforços em períodos críticos para maximizar resultados.</p>
-
-  <h3>Recomendações</h3>
-  <ul>
-    <li>Reforçar escalas e supervisão nos dias e trimestres de menor produtividade.</li>
-    <li>Aproveitar o maior desempenho de sábado para balancear carga de trabalho da semana.</li>
-    <li>Avaliar causas sazonais para antecipar e mitigar variações negativas.</li>
-  </ul>
-</section>
-
-<section class="section">
-  <h2>10. Impacto da Quantidade de Trabalhadores na Produtividade</h2>
-  <h3>Resumo Executivo</h3>
-  <p>O número de trabalhadores por equipe varia entre 2 e 89, com média de aproximadamente <strong>34,6</strong>. Equipes maiores tendem a manter produtividade próxima ou acima do alvo, enquanto grupos muito pequenos enfrentam dificuldades para atingir as metas.</p>
-
-  <h3>Análise Detalhada</h3>
-  <p>A presença de equipes mais robustas favorece a distribuição de tarefas, melhor suporte e consequentemente melhores resultados produtivos. O baixo tempo ocioso por trabalhador (~0,37 minutos) reforça a alta utilização da mão de obra.</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Métrica</th>
-        <th>Valor</th>
-        <th>Comentário</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Pessoas por Equipe</td>
-        <td>2 a 89</td>
-        <td>Amplitude</td>
-      </tr>
-      <tr>
-        <td>Média de Pessoas</td>
-        <td>34,6</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td>Média de Tempo Ocioso por Pessoa</td>
-        <td>0,37 minutos</td>
-        <td>Baixa ociosidade</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3>Descrição Visual</h3>
-  <p>Um gráfico de dispersão correlacionando número de trabalhadores e produtividade mostraria a tendência positiva de equipes maiores com maior produtividade. Histogramas poderiam mostrar distribuição dos tamanhos de equipe.</p>
-
-  <h3>Implicações de Negócio</h3>
-  <p>Manter equipes com número adequado de colaboradores é vital para atingir metas e otimizar recursos. Pequenos grupos necessitam de reforço e monitoramento para evitar perdas.</p>
-
-  <h3>Recomendações</h3>
-  <ul>
-    <li>Garantir dimensionamento ideal das equipes conforme tipo e volume de trabalho.</li>
-    <li>Evitar formação de equipes muito pequenas ou sobrecarregadas.</li>
-    <li>Implementar políticas de alocação flexível para adaptar-se às variações operacionais.</li>
-  </ul>
-</section>
-
-<section class="section">
-  <h2>11. Esquemas de Incentivo: Uso Inconsistente e Impacto Limitado</h2>
-  <h3>Resumo Executivo</h3>
-  <p>Valores de incentivos variam de 0 a 3600, com média de <strong>38,2</strong>, porém mediana é <strong>0</strong>, evidenciando que a maioria dos registros não recebeu incentivos. Não foi encontrada correlação significativa entre incentivo e produtividade real.</p>
-
-  <h3>Análise Detalhada</h3>
-  <p>A aplicação inconsistente e aparentemente ineficiente dos programas de incentivo pode estar limitando seu potencial de impacto na motivação e desempenho.</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Métrica</th>
-        <th>Valor</th>
-        <th>Comentário</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Valor Máximo de Incentivo</td>
-        <td>3600</td>
-        <td>Valor extremo</td>
-      </tr>
-      <tr>
-        <td>Média do Incentivo</td>
-        <td>38,2</td>
-        <td>Baixa média</td>
-      </tr>
-      <tr>
-        <td>Mediana do Incentivo</td>
-        <td>0</td>
-        <td>Maioria sem incentivo</td>
-      </tr>
-      <tr>
-        <td>Correlação Incentivo x Produtividade</td>
-        <td>Nula</td>
-        <td>Sem evidência de impacto</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3>Descrição Visual</h3>
-  <p>Um gráfico de barras com a distribuição dos valores de incentivos evidenciaria o predomínio do zero. Gráfico de dispersão de incentivo versus produtividade mostraria ausência de tendência.</p>
-
-  <h3>Implicações de Negócio</h3>
-  <p>O modelo atual de incentivos não parece motivar adequadamente a força de trabalho. Uma revisão estratégica pode maximizar o retorno sobre investimento motivacional.</p>
-
-  <h3>Recomendações</h3>
-  <ul>
-    <li>Revisar os critérios e métodos de aplicação dos incentivos para garantir justiça e motivação.</li>
-    <li>Realizar campanhas de comunicação para engajamento das equipes quanto a incentivos.</li>
-    <li>Implementar pesquisas de clima e satisfação para alinhar incentivos às expectativas dos colaboradores.</li>
-  </ul>
-</section>
-
-<footer>
-  <p><em>Relatório elaborado por Media de produtividade - Reporting Analyst</em></p>
-  <p><small>Dados baseados em análise quantitativa de registros operacionais atualizados, incluindo estatísticas descritivas, correlações e tendências relevantes para a otimização da produtividade.</small></p>
-</footer>
+<h2>4. Benchmark de Desempenho</h2>
+<p>As avaliações de desempenho devem ser constantemente comparadas com as metas setoriais e realizadas trimestralmente para garantir que os resultados alcançados estejam alinhados com os objetivos empresariais.</p>
 
 </body>
 </html>
