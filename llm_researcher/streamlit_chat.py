@@ -6,6 +6,7 @@ from typing import Dict, List
 import sys
 import os
 from pathlib import Path
+import shutil
 
 # Adicionar o diretório src ao path para importar os módulos
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
@@ -131,9 +132,9 @@ st.markdown("""
     }
     
     .stButton > button[kind="secondary"] {
-        background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
-        border: none;
-        color: white;
+        background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
+        border: 1px solid #dee2e6;
+        color: #495057;
     }
     
     /* Input styling */
@@ -143,16 +144,43 @@ st.markdown("""
         padding: 0.75rem;
         font-size: 1rem;
         transition: border-color 0.2s ease;
+        background-color: #ffffff !important;
+        color: #1a1a1a !important;
     }
     
     .stTextInput > div > div > input:focus {
         border-color: #007bff;
         box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+        background-color: #ffffff !important;
+        color: #1a1a1a !important;
     }
     
-    /* Garantir que inputs tenham texto escuro */
-    .stTextInput > div > div > input {
-        color: #2c3e50 !important;
+    /* Placeholder styling */
+    .stTextInput > div > div > input::placeholder {
+        color: #6c757d !important;
+        opacity: 0.7;
+    }
+    
+    /* Todos os tipos de input */
+    input[type="text"],
+    input[type="email"], 
+    input[type="password"],
+    input[type="search"],
+    textarea,
+    .stTextArea textarea {
+        background-color: #ffffff !important;
+        color: #1a1a1a !important;
+        border: 2px solid #dee2e6 !important;
+        border-radius: 8px !important;
+    }
+    
+    /* Input focus states */
+    input:focus,
+    textarea:focus,
+    .stTextArea textarea:focus {
+        background-color: #ffffff !important;
+        color: #1a1a1a !important;
+        border-color: #007bff !important;
     }
     
     /* Métricas e outros elementos */
@@ -188,11 +216,198 @@ st.markdown("""
     
     /* Captions e textos menores */
     .stCaption, .caption {
-        color: #495057 !important;
+        color: #1a1a1a !important;
+        font-weight: 600;
+    }
+    
+    /* File uploader e elementos específicos */
+    .stFileUploader label {
+        color: #1a1a1a !important;
+        font-weight: 600;
+    }
+    
+    .stFileUploader .stMarkdown {
+        color: #1a1a1a !important;
+    }
+    
+    /* Expandir e outros componentes */
+    .streamlit-expanderHeader {
+        color: #1a1a1a !important;
+        font-weight: 600;
+    }
+    
+    /* Mensagens de status */
+    .stAlert .stMarkdown, 
+    .stSuccess .stMarkdown, 
+    .stInfo .stMarkdown, 
+    .stWarning .stMarkdown, 
+    .stError .stMarkdown {
+        color: #1a1a1a !important;
         font-weight: 500;
     }
     
+    /* Elementos específicos da interface */
+    .stSelectbox .stMarkdown,
+    .stTextArea .stMarkdown,
+    .stNumberInput .stMarkdown,
+    .stDateInput .stMarkdown {
+        color: #1a1a1a !important;
+        font-weight: 600;
+    }
+    
+    /* Texto dentro de containers e colunas */
+    .element-container .stMarkdown,
+    .block-container .stMarkdown {
+        color: #1a1a1a !important;
+    }
+    
+    /* Help text e tooltips */
+    .stTooltipIcon,
+    .stHelp {
+        color: #1a1a1a !important;
+    }
+    
+    /* Forçar cor escura em elementos de texto específicos */
+    p, span, div:not(button):not([data-testid*="button"]), 
+    .stMarkdown, .stText, .stCaption,
+    h1, h2, h3, h4, h5, h6,
+    label, .stSelectbox, .stTextInput,
+    .stMetric, .stAlert {
+        color: #1a1a1a !important;
+    }
+    
+    /* Exceções para elementos que devem manter cor específica */
+    .stButton > button,
+    .stDownloadButton > button {
+        color: white !important;
+    }
+    
+    /* Garantir que todos os botões tenham texto branco */
+    button[kind="primary"],
+    button[kind="secondary"],
+    .stButton button,
+    .stDownloadButton button,
+    .stFormSubmitButton button {
+        color: white !important;
+    }
+    
+    /* Botões específicos do Streamlit */
+    div[data-testid="stButton"] button {
+        color: white !important;
+    }
+    
+    /* File uploader button - cores claras */
+    .stFileUploader button,
+    .stFileUploader input[type="file"] + button,
+    .stFileUploader div button,
+    section[data-testid="stFileUploader"] button {
+        background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%) !important;
+        border: 1px solid #dee2e6 !important;
+        color: #495057 !important;
+    }
+    
+    /* Texto dentro do file uploader */
+    .stFileUploader button span,
+    .stFileUploader button div,
+    .stFileUploader button * {
+        color: #495057 !important;
+    }
+    
+    /* Todos os botões - regra mais específica */
+    button, 
+    input[type="button"], 
+    input[type="submit"],
+    .stButton button *,
+    .stDownloadButton button *,
+    .stFormSubmitButton button * {
+        color: white !important;
+    }
+    
+    /* Botões desabilitados */
+    button:disabled,
+    .stButton button:disabled {
+        color: #FFFFFF !important;
+    }
+    
+    /* Força específica para o file uploader */
+    [data-testid="stFileUploader"] button,
+    [data-testid="stFileUploader"] .stButton button {
+        color: #495057 !important;
+        background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%) !important;
+        border: 1px solid #dee2e6 !important;
+    }
+    
+    /* Qualquer texto dentro de botões */
+    button *, 
+    .stButton button *,
+    .stFileUploader * {
+        color: #FFFFFF !important;
+    }
+    
+    /* File uploader com cores claras */
+    .stFileUploader label,
+    .stFileUploader span,
+    .stFileUploader div,
+    .stFileUploader button,
+    .stFileUploader [role="button"],
+    div[data-testid="stFileUploader"] *,
+    section[data-testid="stFileUploader"] * {
+        color: #495057 !important;
+        background-color: #f8f9fa !important;
+    }
+    
+    /* Botões gerais com cores apropriadas */
+    .st-emotion-cache-* button {
+        background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%) !important;
+        color: #495057 !important;
+        border: 1px solid #dee2e6 !important;
+    }
+    
 </style>
+""", unsafe_allow_html=True)
+
+# JavaScript para forçar estilo claro nos botões do file uploader
+st.markdown("""
+<script>
+setTimeout(function() {
+    // Encontrar todos os botões de file uploader
+    const fileButtons = document.querySelectorAll('[data-testid="stFileUploader"] button, .stFileUploader button');
+    fileButtons.forEach(button => {
+        button.style.color = '#495057';
+        button.style.background = 'linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%)';
+        button.style.border = '1px solid #dee2e6';
+        
+        // Também aplicar aos elementos filhos
+        const children = button.querySelectorAll('*');
+        children.forEach(child => {
+            child.style.color = '#495057';
+        });
+    });
+}, 100);
+
+// Observar mudanças no DOM
+const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+        if (mutation.type === 'childList') {
+            const fileButtons = document.querySelectorAll('[data-testid="stFileUploader"] button, .stFileUploader button');
+            fileButtons.forEach(button => {
+                button.style.color = '#495057';
+                button.style.background = 'linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%)';
+                button.style.border = '1px solid #dee2e6';
+                const children = button.querySelectorAll('*');
+                children.forEach(child => {
+                    child.style.color = '#495057';
+                });
+            });
+        }
+    });
+});
+
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+</script>
 """, unsafe_allow_html=True)
 
 # Inicializar o estado da sessão
@@ -239,6 +454,40 @@ def run_crew_analysis(topic: str) -> str:
     except Exception as e:
         return f"Erro ao executar a análise: {str(e)}"
 
+def save_uploaded_csv(uploaded_file) -> bool:
+    """Salva o arquivo CSV enviado na pasta knowledge"""
+    try:
+        knowledge_dir = Path(__file__).parent / "knowledge"
+        knowledge_dir.mkdir(exist_ok=True)
+        
+        # Remove arquivos CSV existentes
+        for existing_csv in knowledge_dir.glob("*.csv"):
+            existing_csv.unlink()
+        
+        # Salva o novo arquivo
+        file_path = knowledge_dir / uploaded_file.name
+        with open(file_path, "wb") as f:
+            f.write(uploaded_file.getbuffer())
+        
+        return True
+    except Exception as e:
+        st.error(f"Erro ao salvar o arquivo CSV: {e}")
+        return False
+
+def get_current_csv_info() -> Dict:
+    """Retorna informações sobre o CSV atual na pasta knowledge"""
+    knowledge_dir = Path(__file__).parent / "knowledge"
+    csv_files = list(knowledge_dir.glob("*.csv"))
+    
+    if csv_files:
+        csv_file = csv_files[0]
+        return {
+            "name": csv_file.name,
+            "size": csv_file.stat().st_size,
+            "modified": datetime.fromtimestamp(csv_file.stat().st_mtime)
+        }
+    return None
+
 def load_html_report() -> str:
     """Carrega o conteúdo do relatório HTML"""
     report_path = Path(__file__).parent / "report.html"
@@ -268,6 +517,38 @@ def display_message(message: Dict, is_user: bool = False):
 
 def show_chat_page():
     """Exibe a página do chat"""
+    # Verificar se há CSV disponível
+    csv_info = get_current_csv_info()
+    
+    if not csv_info:
+        # Mostrar mensagem quando não há CSV
+        st.error("⚠️ **Nenhum arquivo CSV encontrado!**")
+        st.markdown("""
+        ### 📁 Para começar a usar o chat:
+        
+        1. **Faça upload de um arquivo CSV** na barra lateral
+        2. **Clique em "💾 Salvar CSV"** para confirmar
+        3. **Retorne ao chat** para fazer suas análises
+        
+        O chat ficará disponível assim que você carregar seus dados! 🚀
+        """)
+        
+        # Mostrar exemplo de dados aceitos
+        with st.expander("📋 Que tipo de dados posso analisar?"):
+            st.markdown("""
+            **Exemplos de dados que você pode analisar:**
+            - 📊 Dados de produtividade
+            - 📈 Vendas e performance
+            - 👥 Recursos humanos
+            - 📉 Métricas operacionais
+            - 🏭 Dados industriais
+            - 📋 Qualquer dataset em formato CSV
+            
+            **Formato requerido:** Arquivo .csv com colunas bem definidas
+            """)
+        
+        return
+    
     # Área principal do chat
     col1, col2 = st.columns([3, 1])
     
@@ -418,8 +699,20 @@ def main():
         # Botões de navegação
         col1, col2 = st.columns(2)
         
+        # Verificar se há CSV para habilitar o chat
+        csv_available = get_current_csv_info() is not None
+        
         with col1:
-            if st.button("💬 Chat", use_container_width=True, type="primary" if st.session_state.current_page == "Chat" else "secondary"):
+            chat_button_disabled = not csv_available
+            chat_button_help = None if csv_available else "Carregue um arquivo CSV primeiro"
+            
+            if st.button(
+                "💬 Chat", 
+                use_container_width=True, 
+                type="primary" if st.session_state.current_page == "Chat" else "secondary",
+                disabled=chat_button_disabled,
+                help=chat_button_help
+            ):
                 st.session_state.current_page = "Chat"
                 st.rerun()
         
@@ -434,6 +727,36 @@ def main():
             if st.button(button_label, use_container_width=True, type=button_type):
                 st.session_state.current_page = "Relatório"
                 st.rerun()
+        
+        st.markdown("---")
+        
+        # Upload de CSV
+        st.markdown("### 📁 Dados para Análise")
+        
+        # Mostrar informações do CSV atual
+        csv_info = get_current_csv_info()
+        if csv_info:
+            st.success(f"✅ CSV carregado: {csv_info['name']}")
+            st.caption(f"Tamanho: {csv_info['size']:,} bytes")
+            st.caption(f"Modificado: {csv_info['modified'].strftime('%d/%m/%Y %H:%M')}")
+        else:
+            st.error("❌ Nenhum CSV encontrado")
+            st.markdown("**⚡ Chat bloqueado até carregar dados**")
+        
+        # Upload de novo CSV
+        uploaded_file = st.file_uploader(
+            "Carregar novo CSV",
+            type=['csv'],
+            help="Substitui o CSV atual pelos novos dados para análise"
+        )
+        
+        if uploaded_file is not None:
+            if st.button("💾 Salvar CSV", use_container_width=True):
+                if save_uploaded_csv(uploaded_file):
+                    st.success("✅ CSV salvo com sucesso!")
+                    st.rerun()
+                else:
+                    st.error("❌ Erro ao salvar CSV")
         
         st.markdown("---")
         
@@ -452,6 +775,11 @@ def main():
             if st.button("🗑️ Limpar Histórico do Chat", use_container_width=True):
                 st.session_state.messages = []
                 st.rerun()
+    
+    # Verificar se deve forçar mudança de página quando não há CSV
+    if st.session_state.current_page == "Chat" and not csv_available:
+        st.session_state.current_page = "Relatório"
+        st.rerun()
     
     # Exibir a página atual
     if st.session_state.current_page == "Chat":

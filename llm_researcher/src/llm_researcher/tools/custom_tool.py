@@ -4,6 +4,42 @@ from pydantic import BaseModel, Field
 import pandas as pd
 import numpy as np
 import os
+import glob
+
+
+def find_csv_file():
+    """Find the first CSV file in the knowledge directory."""
+    knowledge_dir = 'knowledge'
+    if not os.path.exists(knowledge_dir):
+        return None
+    
+    # Get all CSV files in the knowledge directory
+    csv_files = glob.glob(os.path.join(knowledge_dir, '*.csv'))
+    
+    if csv_files:
+        # Return the first CSV file found
+        return csv_files[0]
+    return None
+
+
+def load_csv_data():
+    """Load CSV data for analysis."""
+    csv_path = find_csv_file()
+    if not csv_path:
+        return None
+        
+    try:
+        df = pd.read_csv(csv_path)
+        # Try to convert date column to datetime if it exists
+        if 'date' in df.columns:
+            try:
+                df['date'] = pd.to_datetime(df['date'])
+            except:
+                pass  # If date conversion fails, continue without it
+        return df
+    except Exception as e:
+        print(f"Error loading CSV: {e}")
+        return None
 
 
 class OptimizedCSVAnalysisInput(BaseModel):
@@ -33,18 +69,7 @@ class RawDataAccessTool(BaseTool):
 
     def _load_data(self):
         """Load CSV data for analysis."""
-        csv_path = 'knowledge/garments_worker_productivity.csv'
-        try:
-            if os.path.exists(csv_path):
-                df = pd.read_csv(csv_path)
-                # Convert date column to datetime for better analysis
-                df['date'] = pd.to_datetime(df['date'])
-                return df
-            else:
-                return None
-        except Exception as e:
-            print(f"Error loading CSV: {e}")
-            return None
+        return load_csv_data()
 
     def _run(self, data_format: str = "sample") -> str:
         df = self._load_data()
@@ -167,18 +192,7 @@ class OptimizedCSVAnalysisTool(BaseTool):
 
     def _load_data(self):
         """Load CSV data for analysis."""
-        csv_path = 'knowledge/garments_worker_productivity.csv'
-        try:
-            if os.path.exists(csv_path):
-                df = pd.read_csv(csv_path)
-                # Convert date column to datetime for better analysis
-                df['date'] = pd.to_datetime(df['date'])
-                return df
-            else:
-                return None
-        except Exception as e:
-            print(f"Error loading CSV: {e}")
-            return None
+        return load_csv_data()
 
     def _run(self, analysis_type: str = "overview") -> str:
         df = self._load_data()
