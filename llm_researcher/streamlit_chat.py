@@ -25,70 +25,173 @@ st.markdown("""
 <style>
     /* Background geral da aplicação */
     .stApp {
-        background-color: #f5f5f5;
+        background-color: #f8f9fa;
     }
     
     /* Background da área principal */
     .main .block-container {
-        background-color: #f5f5f5;
+        background-color: transparent;
+        padding-top: 2rem;
     }
     
     .main-header {
         font-size: 2.5rem;
         font-weight: 700;
-        color: #FFFFFF;
+        color: #2c3e50;
         text-align: center;
         margin-bottom: 2rem;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
+    
     .chat-message {
-        padding: 1rem;
-        border-radius: 10px;
+        padding: 1.2rem;
+        border-radius: 12px;
         margin: 1rem 0;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border: 1px solid rgba(0,0,0,0.05);
     }
+    
     .user-message {
-        background-color: #FFFFFF;
-        border-left: 4px solid #FFFFFF;
+        background: linear-gradient(135deg, #e3f2fd 0%, #f5f9ff 100%);
+        border-left: 4px solid #2196f3;
         color: #1a1a1a;
     }
+    
     .assistant-message {
-        background-color: #FFFFFF;
-        border-left: 4px solid #FFFFFF;
+        background: linear-gradient(135deg, #f1f8e9 0%, #f8fff4 100%);
+        border-left: 4px solid #4caf50;
         color: #1a1a1a;
     }
+    
     .timestamp {
-        font-size: 0.8rem;
-        color: #666;
+        font-size: 0.75rem;
+        color: #495057;
         text-align: right;
         margin-top: 0.5rem;
+        font-style: italic;
+        font-weight: 500;
     }
+    
     .sidebar-info {
-        background-color: #FFFFFF;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
         padding: 1rem;
         border-radius: 8px;
-        border: 1px solid #e0e0e0;
-        color: #FFFFFF;
+        border: 1px solid #dee2e6;
+        color: #1a1a1a;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        font-weight: 500;
     }
     
-    /* Melhorar contraste geral */
-    .stMarkdown, .stText {
-        color: #FFFFFF;
+    /* Melhorar contraste para texto geral */
+    .stMarkdown {
+        color: #2c3e50;
     }
     
-    /* Ajustar cores do sidebar */
-    .css-1d391kg {
-        background-color: #f0f0f0;
+    /* Garantir que todos os textos sejam escuros */
+    .stText, p, span, div {
+        color: #1a1a1a !important;
     }
     
-    /* Background da sidebar */
-    .css-1lcbmhc, .css-1cypcdb {
-        background-color: #f0f0f0;
+    /* Textos da sidebar */
+    section[data-testid="stSidebar"] .stMarkdown {
+        color: #1a1a1a !important;
     }
     
-    /* Sidebar container */
+    section[data-testid="stSidebar"] p, 
+    section[data-testid="stSidebar"] span, 
+    section[data-testid="stSidebar"] div,
+    section[data-testid="stSidebar"] .stText {
+        color: #1a1a1a !important;
+    }
+    
+    /* Títulos e subtítulos */
+    h1, h2, h3, h4, h5, h6 {
+        color: #1a1a1a !important;
+        font-weight: 600;
+    }
+    
+    /* Sidebar styling */
     section[data-testid="stSidebar"] {
-        background-color: #f0f0f0;
+        background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+        border-right: 1px solid #dee2e6;
     }
+    
+    /* Botões de navegação */
+    .stButton > button {
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+    
+    .stButton > button[kind="primary"] {
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        border: none;
+        color: white;
+        box-shadow: 0 2px 4px rgba(0,123,255,0.3);
+    }
+    
+    .stButton > button[kind="secondary"] {
+        background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+        border: none;
+        color: white;
+    }
+    
+    /* Input styling */
+    .stTextInput > div > div > input {
+        border-radius: 8px;
+        border: 2px solid #dee2e6;
+        padding: 0.75rem;
+        font-size: 1rem;
+        transition: border-color 0.2s ease;
+    }
+    
+    .stTextInput > div > div > input:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+    }
+    
+    /* Garantir que inputs tenham texto escuro */
+    .stTextInput > div > div > input {
+        color: #2c3e50 !important;
+    }
+    
+    /* Métricas e outros elementos */
+    .metric-container, .stMetric {
+        color: #1a1a1a !important;
+    }
+    
+    .stMetric .metric-value {
+        color: #1a1a1a !important;
+        font-weight: 700;
+    }
+    
+    .stMetric .metric-label {
+        color: #1a1a1a !important;
+        font-weight: 600;
+    }
+    
+    /* Labels e outros textos */
+    label, .stSelectbox label, .stTextInput label {
+        color: #1a1a1a !important;
+        font-weight: 600;
+    }
+    
+    /* Alertas e mensagens */
+    .stAlert, .stSuccess, .stInfo, .stWarning, .stError {
+        color: #1a1a1a !important;
+    }
+    
+    /* Textos dos botões - garantir visibilidade */
+    .stButton > button {
+        font-weight: 700 !important;
+    }
+    
+    /* Captions e textos menores */
+    .stCaption, .caption {
+        color: #495057 !important;
+        font-weight: 500;
+    }
+    
 </style>
 """, unsafe_allow_html=True)
 
